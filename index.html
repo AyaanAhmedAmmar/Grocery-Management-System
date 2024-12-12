@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Grocery Management System</h1>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation">
+            <button class="nav-button" data-target="inventory-management">Inventory Management</button>
+            <button class="nav-button" data-target="selling-management">Selling Management</button>
+            <button class="nav-button" data-target="sales-management">Inventory List</button>
+        </div>
+
+        <!-- Inventory Management Section -->
+        <section id="inventory-management" class="hidden">
+            <h2>Inventory Management</h2>
+            <form id="inventory-form">
+                <input type="text" id="item-name" placeholder="Item Name" required>
+                <input type="number" id="item-quantity" placeholder="Quantity" required>
+                <input type="number" id="item-price" placeholder="Price per Unit" required>
+                <button type="submit">Add to Inventory</button>
+            </form>
+            <div class="inventory-list">
+                <h3>Inventory List</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price/Unit</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventory-table">
+                        <!-- Inventory items will appear here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Selling Management Section -->
+        <section id="selling-management" class="hidden">
+            <h2>Selling Management</h2>
+            <form id="sell-form">
+                <select id="sell-item" required>
+                    <option value="" disabled selected>Select Item</option>
+                </select>
+                <input type="number" id="sell-quantity" placeholder="Quantity to Sell" required>
+                <button type="submit">Sell</button>
+            </form>
+        </section>
+
+        <!-- Inventory List Section -->
+        <section id="sales-management" class="hidden">
+            <h2>Inventory List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Price/Unit</th>
+                    </tr>
+                </thead>
+                <tbody id="sales-inventory-table">
+                    <!-- Inventory items will appear here -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
